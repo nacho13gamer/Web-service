@@ -1,0 +1,49 @@
+$overlay-color: rgba(0, 0, 0, 0.5);
+$text-white: #ffffff;
+$text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('/FOTANELL.jpeg');
+  background-size: cover;
+  background-position: center;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: $overlay-color;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__content {
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+    color: $text-white;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  &__title {
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: $text-shadow;
+  }
+
+  &__subtitle {
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-shadow: $text-shadow;
+  }
+
+  &__description {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    opacity: 0.95;
+    text-shadow: $text-shadow;
+  }
+}

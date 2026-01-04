@@ -1,0 +1,76 @@
+.features {
+  padding: 6rem 2rem;
+  background-color: #f9fafb;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+  }
+
+  &__card {
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e40af;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  &__button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #2563eb;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 4rem 1rem;
+
+    &__container {
+      gap: 2rem;
+    }
+
+    &__title {
+      font-size: 1.6rem;
+    }
+  }
+}

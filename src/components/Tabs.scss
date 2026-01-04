@@ -1,0 +1,59 @@
+.tabs {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding: 0 1rem;  // Padding lateral para móvil
+  border-bottom: 2px solid #e5e7eb;
+  overflow-x: auto;  // Scroll horizontal si no caben en móvil
+  -webkit-overflow-scrolling: touch;  // Scroll suave en iOS
+  scrollbar-width: none;  // Oculta scrollbar en Firefox
+
+  &::-webkit-scrollbar {
+    display: none;  // Oculta scrollbar en Chrome/Safari
+  }
+
+  &__button {
+    background: none;
+    border: none;
+    padding: 0.9rem 1.8rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #6b7280;
+    cursor: pointer;
+    white-space: nowrap;  // Evita que el texto se rompa en móvil
+    border-bottom: 4px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &:hover {
+      color: #1f2937;
+    }
+
+    &--active {
+      color: #3b82f6;
+      border-bottom-color: #3b82f6;
+      font-weight: 700;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #3b82f6;
+        border-radius: 2px 2px 0 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.7rem 1rem;
+      font-size: 0.95rem;
+    }
+  }
+}

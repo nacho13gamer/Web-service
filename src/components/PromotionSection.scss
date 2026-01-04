@@ -1,0 +1,109 @@
+.promotion {
+  position: relative;
+  height: 80vh;
+  background-image: url('/Promocion.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promotion__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.promotion__content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  max-width: 90%;
+}
+
+.promotion__title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+.promotion__badges {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.promotion__badge {
+  background-color: rgba(59, 130, 246, 0.9);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: fit-content;          // Se ajusta al contenido
+  max-width: 90%;              // Nunca excede el 90% de la pantalla
+  align-self: center;          // Centrado
+  word-wrap: break-word;       // Rompe palabras largas
+  white-space: normal;         // Permite salto de línea
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  line-height: 1.4;
+}
+
+.promotion__text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.promotion__contact {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.8;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive – ahora sí queda perfecto en móvil */
+@media (max-width: 768px) {
+  .promotion {
+    height: 70vh;
+  }
+
+  .promotion__title {
+    font-size: 3rem;
+  }
+
+  .promotion__badge {
+    font-size: 1.3rem;
+    padding: 0.9rem 1.8rem;
+    max-width: 95%;
+  }
+
+  .promotion__text {
+    font-size: 2rem;
+  }
+
+  .promotion__contact {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .promotion__title {
+    font-size: 2.5rem;
+  }
+
+  .promotion__badge {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .promotion__text {
+    font-size: 1.8rem;
+  }
+}
