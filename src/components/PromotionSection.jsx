@@ -12,11 +12,7 @@ const PromotionSection = () => {
           <span className="promotion__badge">Cambio de pantalla con mic de regalo</span>
           <span className="promotion__badge">Garantía de 30 días</span>
         </div>
-        <p className="promotion__text">Promoción solo hoy</p>
-        <p className="promotion__contact">
-          Tel: 833-410-0007 • 833 683 1800<br />
-          Plaza de la Tecnología Locales 355,168
-        </p>
+       
       </div>
     </section>
   );

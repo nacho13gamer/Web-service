@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection';
 import FeaturesSection from './components/FeaturesSection';
 import Footer from './components/Footer';
 import PromotionSection from './components/PromotionSection';
+import LocalesSection from './components/LocalesSection';  // ← ESTA LÍNEA FALTABA
 
 function App() {
   const [activeTab, setActiveTab] = useState('Home');  // Empieza en Home para ver el hero
@@ -28,10 +29,13 @@ function App() {
 
         {activeTab === 'Locales' && (
           <div className="py-12">
-            {/* Aquí irán el buscador y las tarjetas de locales */}
-            <p className="text-center text-gray-500 text-lg">
-              Buscador y lista de locales aquí (tarjetas con fotos, WhatsApp, etc.)
-            </p>
+            {/* Comentario opcional */}
+    <p className="text-center text-gray-700 text-lg mb-8">
+      Ubicacion y lista de locales aquí 
+    </p>
+    
+    {/* Aquí sí va el componente, FUERA del <p> */}
+    <LocalesSection />
           </div>
         )}
 

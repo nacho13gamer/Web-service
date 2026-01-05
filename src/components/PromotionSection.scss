@@ -41,17 +41,18 @@
 .promotion__badge {
   background-color: rgba(59, 130, 246, 0.9);
   color: white;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;  // Padding más flexible
   border-radius: 3rem;
   font-size: 1.5rem;
   font-weight: 600;
-  width: fit-content;          // Se ajusta al contenido
-  max-width: 90%;              // Nunca excede el 90% de la pantalla
-  align-self: center;          // Centrado
-  word-wrap: break-word;       // Rompe palabras largas
-  white-space: normal;         // Permite salto de línea
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  display: block;  // Cambiado a block para que ocupe el ancho disponible
+  max-width: 85%;  // Limita el ancho máximo
+  margin: 0 auto;  // Centrado
+  word-wrap: break-word;  // Rompe palabras largas
+  white-space: normal;  // Permite salto de línea
+  text-align: center;
   line-height: 1.4;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .promotion__text {
@@ -80,7 +81,7 @@
 
   .promotion__badge {
     font-size: 1.3rem;
-    padding: 0.9rem 1.8rem;
+    padding: 0.9rem 1.5rem;
     max-width: 95%;
   }
 
@@ -100,7 +101,7 @@
 
   .promotion__badge {
     font-size: 1.1rem;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.2rem;
   }
 
   .promotion__text {
