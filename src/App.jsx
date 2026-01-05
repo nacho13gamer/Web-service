@@ -5,7 +5,8 @@ import HeroSection from './components/HeroSection';
 import FeaturesSection from './components/FeaturesSection';
 import Footer from './components/Footer';
 import PromotionSection from './components/PromotionSection';
-import LocalesSection from './components/LocalesSection';  // ← ESTA LÍNEA FALTABA
+import LocalesSection from './components/LocalesSection';  
+import ResenasSection from './components/ResenasSection';  // Importa arriba
 
 function App() {
   const [activeTab, setActiveTab] = useState('Home');  // Empieza en Home para ver el hero
@@ -43,7 +44,7 @@ function App() {
         {activeTab === 'Reseñas' && (
           <div className="py-12">
             <p className="text-center text-gray-500 text-lg">
-              Lista de reseñas y formulario para dejar una aquí...
+              <ResenasSection />
             </p>
           </div>
         )}

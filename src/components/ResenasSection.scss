@@ -1,0 +1,151 @@
+.resenas {
+  padding: 4rem 2rem;
+  background-color: #f9fafb;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e40af;
+  }
+
+  &__rating {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  &__subtitle {
+    text-align: center;
+    color: #4b5563;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 3rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  &__card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  &__local {
+    display: block;
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+
+  &__stars {
+    font-size: 1.4rem;
+  }
+
+  &__comment {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  &__date {
+    font-size: 0.9rem;
+    color: #9ca3af;
+  }
+
+  &__empty {
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.2rem;
+  }
+
+  &__form-container {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+  }
+
+  &__form-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  &__form-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #1e40af;
+  }
+
+  &__input, &__textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+
+  &__textarea {
+    resize: vertical;
+  }
+
+  &__rating-input {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  &__star {
+    cursor: pointer;
+    font-size: 1.8rem;
+    transition: 0.2s;
+
+    &.filled {
+      color: #fbbf24;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    background-color: #1e40af;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1024px) {
+    &__container {
+      grid-template-columns: 1fr;
+    }
+
+    &__form-container {
+      position: static;
+    }
+  }
+}
