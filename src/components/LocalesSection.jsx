@@ -7,21 +7,21 @@ const locales = [
     nombre: 'Fortanell Local 355 (Plaza de la Tecnología)',
     direccion: 'Plaza de la Tecnología, Benito Juárez 304, Local 255, Zona Centro, 89000 Tampico, Tamps.',
     fotoLocal: '/local355.jpeg',  // Tu foto del local en public/
-    telefono: '8336831800',  // Cambia por el real
+    telefono: '528336831800',  // Cambia por el real
   },
   {
     id: 2,
     nombre: 'Fortanell Local 168 (Plaza de la Tecnología)',
     direccion: 'Plaza de la Tecnología, Benito Juárez 304, Local 168, Zona Centro, 89000 Tampico, Tamps.',
     fotoLocal: '/local168.jpeg',
-    telefono: '8334116097',
+    telefono: '528334116097',
   },
   {
     id: 3,
     nombre: 'Tecnocenter (Afuera)',
     direccion: 'Francisco I. Madero 401-C, Zona Centro, 89000 Tampico, Tamps.',
     fotoLocal: '/tecnocenter.jpg',
-    telefono: '8334116097',
+    telefono: '528336831800',
   },
 ];
 
