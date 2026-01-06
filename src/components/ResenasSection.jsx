@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { database } from '../firebase';
+import { ref, push, onValue } from 'firebase/database';
 import './ResenasSection.scss';
 
 const ResenasSection = () => {
@@ -6,19 +8,30 @@ const ResenasSection = () => {
   const [nombre, setNombre] = useState('');
   const [localVisitado, setLocalVisitado] = useState('');
   const [calificacion, setCalificacion] = useState(0);
-  const [hoverCalificacion, setHoverCalificacion] = useState(0);  // Para hover
+  const [hoverCalificacion, setHoverCalificacion] = useState(0);
   const [comentario, setComentario] = useState('');
 
-  // Cargar reseñas de localStorage
+  // Cargar reseñas
   useEffect(() => {
-    const saved = localStorage.getItem('reseñas');
-    if (saved) setReseñas(JSON.parse(saved));
-  }, []);
+    const reseñasRef = ref(database, 'reseñas');
+    const unsubscribe = onValue(reseñasRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const lista = Object.keys(data).map(key => ({
+          id: key,
+          ...data[key]
+        }));
+        setReseñas(lista.reverse());
+      } else {
+        setReseñas([]);
+      }
+    }, (error) => {
+      console.error('Error al cargar reseñas:', error);
+      setReseñas([]);  // Fallback si falla conexión
+    });
 
-  // Guardar en localStorage
-  useEffect(() => {
-    localStorage.setItem('reseñas', JSON.stringify(reseñas));
-  }, [reseñas]);
+    return () => unsubscribe();  // Limpia listener
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,15 +41,22 @@ const ResenasSection = () => {
     }
 
     const nueva = {
-      id: Date.now(),
       nombre,
       local: localVisitado,
       calificacion,
       comentario,
-      fecha: new Date().toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' }),
+      fecha: new Date().toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })
     };
 
-    setReseñas([nueva, ...reseñas]);
+    const reseñasRef = ref(database, 'reseñas');
+    push(reseñasRef, nueva)
+      .then(() => {
+        console.log('Reseña guardada');
+      })
+      .catch((error) => {
+        console.error('Error al guardar reseña:', error);
+      });
+
     setNombre('');
     setLocalVisitado('');
     setCalificacion(0);
@@ -104,7 +124,7 @@ const ResenasSection = () => {
               >
                 <option value="">Selecciona un local</option>
                 <option>Tecnocenter</option>
-                <option>Fortanell Local 255</option>
+                <option>Fortanell Local 355</option>
                 <option>Fortanell Local 168</option>
               </select>
 

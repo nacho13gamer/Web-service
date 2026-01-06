@@ -40,14 +40,17 @@ function App() {
           </div>
         )}
 
+{activeTab === 'Reseñas' && (
+  <div className="py-12">
+    {/* Texto introductorio opcional */}
+    <p className="text-center text-gray-500 text-lg mb-8">
+      Lee las experiencias de nuestros clientes o comparte la tuya.
+    </p>
 
-        {activeTab === 'Reseñas' && (
-          <div className="py-12">
-            <p className="text-center text-gray-500 text-lg">
-              <ResenasSection />
-            </p>
-          </div>
-        )}
+    {/* El componente completo FUERA del <p> */}
+    <ResenasSection />
+  </div>
+)}
       </main>
       <Footer/>
     </div>
